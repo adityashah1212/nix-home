@@ -41,6 +41,9 @@
 
     mkdir -p "$HOME/.cache/nushell"
     ${pkgs.carapace}/bin/carapace _carapace nushell > "$HOME/.cache/nushell/carapace.nu"
+
+    ${pkgs.git}/bin/git config --global core.editor hx
+    ${pkgs.git}/bin/git config --global commit.cleanup scissors
   '';
 
   home.file.".local/share/nushell/vendor/autoload/carapace.nu" = {
