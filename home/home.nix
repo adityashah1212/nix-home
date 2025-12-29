@@ -1,7 +1,13 @@
-{ pkgs, lib, ... }:
 {
-  home.username = "lima";
-  home.homeDirectory = "/home/lima.linux";
+  pkgs,
+  lib,
+  username,
+  homeDir,
+  ...
+}:
+{
+  home.username = username;
+  home.homeDirectory = homeDir;
 
   imports = [
     ./bash.nix
@@ -22,7 +28,7 @@
     ripgrep
     cspell
     fish-lsp
-    nil
+    nixd
     nixfmt
     zsh
     fish

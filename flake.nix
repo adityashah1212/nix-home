@@ -15,16 +15,30 @@
       nixpkgs,
       home-manager,
     }:
-    let
-      pkgs = nixpkgs.legacyPackages."aarch64-linux";
-    in
     {
       homeConfigurations = {
-        dev-profile = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
+        mac = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."aarch64-darwin";
           modules = [
             ./home/home.nix
           ];
+          extraSpecialArgs = {
+            username = "aditya";
+            homeDir = "/Users/aditya";
+            system = "aarch64-darwin";
+          };
+        };
+
+        lima = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages."aarch64-linux";
+          modules = [
+            ./home/home.nix
+          ];
+          extraSpecialArgs = {
+            username = "aditya";
+            homeDir = "/home/aditya";
+            system = "aarch64-linux";
+          };
         };
       };
     };

@@ -21,6 +21,11 @@
         language-servers = [ "bash-language-server" "cspell" ];
         formatter = [ "shfmt" ];
       }
+      {
+        name = "nix";
+        language-servers = [ "nil" "nixd" "cspell" ];
+        formatter = [ "nixfmt" ];
+      }
     ];
 
     defaultEditor = true;
