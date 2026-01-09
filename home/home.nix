@@ -40,7 +40,6 @@
     shellcheck
     nufmt
     skim
-    wild
   ];
 
   home.activation.starship-nu = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
@@ -55,21 +54,6 @@
     text = ''
       $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
       source $"($nu.cache-dir | path join carapace.nu)"
-    '';
-  };
-
-  home.file.".cargo/config.toml" = {
-    text = ''
-      [unstable]
-      codegen-backend = true
-
-      [profile.dev]
-      codegen-backend = "cranelift"
-
-      [target.'cfg(all(target_os = "linux", debug-assertions))']
-      rustflags = [
-        "-C", "link-arg=-fuse-ld=wild"
-      ]
     '';
   };
 
