@@ -11,9 +11,9 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       home-manager,
+      ...
     }:
     {
       homeConfigurations = {
@@ -23,8 +23,8 @@
             ./home/home.nix
           ];
           extraSpecialArgs = {
-            username = "aditya";
-            homeDir = "/Users/aditya";
+            username = "adityashah";
+            homeDir = "/Users/adityashah";
             system = "aarch64-darwin";
           };
         };
@@ -35,8 +35,8 @@
             ./home/home.nix
           ];
           extraSpecialArgs = {
-            username = "aditya";
-            homeDir = "/home/aditya";
+            username = "adityashah";
+            homeDir = "/home/adityashah";
             system = "aarch64-linux";
           };
         };
