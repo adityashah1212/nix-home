@@ -9,6 +9,13 @@
   home.username = username;
   home.homeDirectory = homeDir;
 
+  nix = {
+    package = pkgs.nix;
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+    };
+  };
+
   imports = [
     ./bash.nix
     ./carapace.nix
