@@ -16,7 +16,7 @@ in
       commit.cleanup = "scissors";
       init.defaultBranch = "main";
       user.name = "Aditya Shah";
-      inherit credential;
+      inherit (credential) credential;
     };
   };
 }
