@@ -3,8 +3,8 @@
   programs.fish = {
     enable = true;
     shellInit = ''
-      if test -d $HOME/.cargo/bin
-        fish_add_path $HOME/.cargo/bin
+      if test -f $HOME/.cargo/env.fish
+        . $HOME/.cargo/env.fish
       end
     '';
   };
