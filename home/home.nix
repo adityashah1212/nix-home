@@ -47,8 +47,7 @@
     shellcheck
     nufmt
     skim
-    tomlq
-    jaq
+    yq-go
   ];
 
   home.activation.starship-nu = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
