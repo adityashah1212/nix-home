@@ -48,6 +48,12 @@
     nufmt
     skim
     yq-go
+    llvmPackages.clang-tools
+    yaml-language-server
+    tombi
+    vscode-json-languageserver
+    ty
+    typescript-language-server
   ];
 
   home.activation.starship-nu = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
