@@ -54,6 +54,8 @@
     vscode-json-languageserver
     ty
     typescript-language-server
+    youplot
+    duckdb
   ];
 
   home.activation.starship-nu = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
