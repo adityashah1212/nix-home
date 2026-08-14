@@ -52,10 +52,12 @@
     yaml-language-server
     tombi
     vscode-json-languageserver
-    ty
+    pyrefly
     typescript-language-server
     youplot
     duckdb
+    deno
+    dprint
   ];
 
   home.activation.starship-nu = lib.hm.dag.entryAfter [ "writeBoundary" ] ''

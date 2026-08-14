@@ -9,22 +9,49 @@
     languages.language = [
       {
         name = "fish";
-        language-servers = [ "fish-lsp" "cspell" ];
+        language-servers = [
+          "fish-lsp"
+          "cspell"
+        ];
       }
       {
         name = "nu";
-        language-servers = [ "nu-lsp" "cspell" ];
-        formatter = { command = "nufmt"; args = [ "--stdin" ]; };
+        language-servers = [
+          "nu-lsp"
+          "cspell"
+        ];
+        formatter = {
+          command = "nufmt";
+          args = [ "--stdin" ];
+        };
       }
       {
         name = "bash";
-        language-servers = [ "bash-language-server" "cspell" ];
+        language-servers = [
+          "bash-language-server"
+          "cspell"
+        ];
         formatter = [ "shfmt" ];
       }
       {
         name = "nix";
-        language-servers = [ "nil" "nixd" "cspell" ];
+        language-servers = [
+          "nil"
+          "nixd"
+          "cspell"
+        ];
         formatter = [ "nixfmt" ];
+      }
+      {
+        name = "python";
+        language-servers = [
+          "ty"
+          "ruff"
+          "jedi"
+          "pylsp"
+          "pyrefly"
+          "cspell"
+        ];
       }
     ];
 
