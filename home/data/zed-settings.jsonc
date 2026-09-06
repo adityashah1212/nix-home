@@ -1,0 +1,145 @@
+{
+  "disable_ai": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "Ayu Dark",
+  },
+  "lsp": {
+    "deno": {
+      "settings": {
+        "enable": true,
+      },
+    },
+    "json-language-server": {
+      "settings": {
+        "json": {
+          "schemas": [
+            {
+              "fileMatch": [
+                "deno.json",
+                "deno.jsonc",
+              ],
+              "url": "https://raw.githubusercontent.com/denoland/deno/refs/heads/main/cli/schemas/config-file.v1.json",
+            },
+            {
+              "fileMatch": [
+                "package.json",
+              ],
+              "url": "https://www.schemastore.org/package",
+            },
+          ],
+        },
+      },
+    },
+    "rust-analyzer": {
+      "enable_lsp_tasks": true,
+      "settings": {
+        "check": {
+          "command": "clippy",
+        },
+      },
+    },
+    "nixd": {
+      "settings": {
+        "diagnostic": {
+          "suppress": [ "sema-extra-with" ]
+        },
+        "formatting": {
+          "command": [ "nixfmt" ]
+        }
+      }
+    },
+    "nu": {
+      "binary": {
+        "path": "nu",
+        "arguments": [ "--lsp" ],
+      },
+    },
+  },
+  "languages": {
+    "Python": {
+      "language_servers": [
+        "pyrefly",
+        "!basedpyright",
+      ],
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "autopep8",
+        },
+      },
+    },
+    "JavaScript": {
+      "format_on_save": "on",
+      "language_servers": [
+        "deno",
+        "!typescript-language-server",
+        "!vtsls",
+        "!eslint",
+      ],
+      "formatter": "language_server",
+    },
+    "Toml": {
+      "format_on_save": true,
+      "language_servers": [
+        "tombi",
+        "!toml",
+      ]
+    },
+    "TypeScript": {
+      "format_on_save": "on",
+      "language_servers": [
+        "deno",
+        "!typescript-language-server",
+        "!vtsls",
+        "!eslint",
+      ],
+      "formatter": "language_server",
+    },
+    "TSX": {
+      "format_on_save": "on",
+      "language_servers": [
+        "deno",
+        "!typescript-language-server",
+        "!vtsls",
+        "!eslint",
+      ],
+      "formatter": "language_server",
+    },
+    "Rust": {
+      "format_on_save": "on",
+    },
+    "C": {
+      "format_on_save": "on",
+    },
+    "C++": {
+      "format_on_save": "on",
+    },
+    "Fish": {
+      "formatter": {
+        "external": {
+          "command": "fish_indent",
+        },
+      },
+    },
+    "Nu": {
+      "language_servers": [ "nu" ],
+      "format_on_save": "on",
+      "formatter": {
+        "external": {
+          "command": "nufmt",
+        },
+      },
+    },
+    "Nix": {
+      "language_servers": [
+        "nixd"
+      ],
+      "format_on_save": "on",
+      "formatter": "language_server",
+    },
+  },
+}

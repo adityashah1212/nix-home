@@ -12,7 +12,10 @@
   nix = {
     package = pkgs.nix;
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
     };
   };
 
@@ -73,6 +76,10 @@
       $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
       source $"($nu.cache-dir | path join carapace.nu)"
     '';
+  };
+
+  home.file.".config/zed/settings.json" = {
+    source = data/zed-settings.jsonc;
   };
 
   home.stateVersion = "25.11";
